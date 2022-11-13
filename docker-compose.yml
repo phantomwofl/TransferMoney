@@ -1,0 +1,16 @@
+version: "3.7"
+
+services:
+  server:
+    container_name: back-end
+    build: ./
+    ports:
+      - "5500:5500"
+  client:
+    container_name: front-end
+    build: front/
+    ports:
+      - "3000:3000"
+    depends_on:
+      - server
+
